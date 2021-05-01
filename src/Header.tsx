@@ -16,7 +16,7 @@ export default function Header() {
           kvberlin.de
         </a>{" "}
         for requesting corona vaccine made easier to access and search.{" "}
-        <Link className="text-blue-700 underline" to="/more">
+        <Link className="text-blue-700 underline" to="/about">
           more info
         </Link>
       </p>

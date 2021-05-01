@@ -2,17 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import { Router, Route } from "wouter";
-import More from "./More";
+import { Switch, Route } from "wouter";
+import About from "./About";
 
 ReactDOM.render(
-  <Router>
+  <Switch>
+    <Route path="/about">
+      <About />
+    </Route>
     <Route>
       <App />
     </Route>
-    <Route path="/more">
-      <More />
-    </Route>
-  </Router>,
+  </Switch>,
   document.getElementById("root")
 );
