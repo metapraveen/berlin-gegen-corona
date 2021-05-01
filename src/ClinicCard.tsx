@@ -31,7 +31,7 @@ export default function ClinicCard({ clinic }: { clinic: Clinic }) {
         if (key === "key_1") return null;
 
         return (
-          <div className="leading-6">
+          <div>
             <span className="text-sm font-medium capitalize font-mono">
               {keyToHeaderMap[key]}:{" "}
             </span>
@@ -46,10 +46,10 @@ export default function ClinicCard({ clinic }: { clinic: Clinic }) {
 
 function DetailsRow({ field, value }: { field: keyof Clinic; value: string }) {
   return (
-    <span className="text-md text-gray-900 font-normal text-base text-gray-600 text-md font-serif">
+    <span className="text-base font-serif leading-relaxed">
       {field === "key_9" || field === "key_12" ? (
         <a
-          className="text-blue-400"
+          className="text-blue-400 underline"
           target="_blank"
           rel="noreferrer"
           href={sanitizeLink(value)}
@@ -61,9 +61,7 @@ function DetailsRow({ field, value }: { field: keyof Clinic; value: string }) {
           data-value={value}
           onClick={copyToClipboard}
           style={{ cursor: "copy" }}
-          className={
-            field === "key_8" ? "font-semibold text-indigo-400  text-md" : ""
-          }
+          className={field === "key_8" ? "font-semibold text-sm" : ""}
         >
           {value}
         </span>
