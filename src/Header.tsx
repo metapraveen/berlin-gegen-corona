@@ -6,7 +6,7 @@ export default function Header() {
     <div className=" text-indigo-500 font-semibold p-4 text-center w-full max-w-xl">
       <h1>Berlin fights Corona</h1>
       <p className="text-gray-900 text-sm text-left mt-3 mb-1">
-        Berlin clinics data from{" "}
+        Berlin clinics information from{" "}
         <a
           target="_blank"
           rel="noreferrer"
