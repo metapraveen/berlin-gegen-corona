@@ -19,16 +19,16 @@ export default function More() {
           >
             kvberlin.de
           </a>{" "}
-          But it is frustrating to search that big PDF and copy email or phone
-          number from it, specially on mobile.
+          But it is hard to search and copy email/phone number from the PDF,
+          especially on mobile.
         </p>
         <p>
           {" "}
-          So I built this site which shows the same data but bit easy to access
+          Hence I built this site which shows the same data but easy to access
           on mobile. You can search clinics using district, address, doctor name
-          and pin code. Clicking on any field copies it. I will add couple of
-          features like grouping by districts and bookmarking the clinic where
-          you have already got into waiting list soon.
+          and pin code. Clicking on any field copies the data. I will add couple
+          of features like grouping by districts and bookmarking the clinic
+          where you have already got into waiting list soon.
         </p>
         <p>
           I have put together this in couple of hours, if any data is wrong or

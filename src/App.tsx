@@ -35,8 +35,8 @@ function App() {
           >
             kvberlin.de
           </a>{" "}
-          for booking corona vaccine made bit easier to access on mobile and
-          searchable.{" "}
+          for booking corona vaccine in Berlin made easier to access and search
+          on mobile{" "}
           <Link className="text-blue-700 underline" to="/more">
             More info
           </Link>
