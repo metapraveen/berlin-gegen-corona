@@ -22,7 +22,6 @@ const SearchBar: React.FC<Props> = ({ onSearch }) => {
         </svg>
       </span>
       <input
-        autoFocus
         onChange={(changeEvent) =>
           onSearch(changeEvent.currentTarget.value.trim().toLocaleLowerCase())
         }

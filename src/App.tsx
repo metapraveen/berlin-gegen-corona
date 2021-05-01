@@ -22,7 +22,7 @@ function App() {
     []
   );
   return (
-    <div className="p-3 max-w-xl mx-auto">
+    <div className="p-3 mx-auto  max-w-xl overflow-hidden">
       <Header />
       <SearchBar onSearch={filterClinicsOnSearch} />
       <div className="mt-8 space-y-4 w-full h-full">
