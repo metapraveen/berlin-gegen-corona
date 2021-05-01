@@ -5,7 +5,7 @@ type Props = {
 };
 const SearchBar: React.FC<Props> = ({ onSearch }) => {
   return (
-    <div className="flex items-center w-full">
+    <div className="flex items-center w-full max-w-xl">
       <span className="absolute pl-1 pt-1 flex items-center">
         <svg
           className="h-7 w-7 left-y-0 inset-0 text-gray-400"

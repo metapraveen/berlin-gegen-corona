@@ -21,16 +21,21 @@ const keysOrder: (keyof Clinic)[] = [
 
 export default function ClinicCard({ clinic }: { clinic: Clinic }) {
   return (
-    <div className="p-5 w-auto border border-purple-100 bg-white rounded-lg overflow-y-scroll">
+    <div className=" p-3 bg-white rounded-lg w-full subpixel-antialiased shadow-md">
       {keysOrder.map((key) => {
-        const value = clinic[key];
+        let value =
+          key === "key_8" ? removeWhiteSpace(clinic[key]) : clinic[key];
         if (!value || value.trim().length === 0) return null;
 
+        if (key === "key_2") value = `${value}, ${clinic.key_1}`;
+        if (key === "key_1") return null;
+
         return (
-          <div className="leading-normal">
-            <span className="text-sm text-grey-400 font-bold lowercase">
+          <div className="leading-6">
+            <span className="text-sm font-medium capitalize font-mono">
               {keyToHeaderMap[key]}:{" "}
             </span>
+
             <DetailsRow field={key} value={value} />
           </div>
         );
@@ -41,7 +46,7 @@ export default function ClinicCard({ clinic }: { clinic: Clinic }) {
 
 function DetailsRow({ field, value }: { field: keyof Clinic; value: string }) {
   return (
-    <span className="text-md text-grey-100 font-normal text-base">
+    <span className="text-md text-gray-900 font-normal text-base text-gray-600 text-md font-serif">
       {field === "key_9" || field === "key_12" ? (
         <a
           className="text-blue-400"
@@ -56,6 +61,9 @@ function DetailsRow({ field, value }: { field: keyof Clinic; value: string }) {
           data-value={value}
           onClick={copyToClipboard}
           style={{ cursor: "copy" }}
+          className={
+            field === "key_8" ? "font-semibold text-indigo-400  text-md" : ""
+          }
         >
           {value}
         </span>
@@ -66,5 +74,9 @@ function DetailsRow({ field, value }: { field: keyof Clinic; value: string }) {
 
 function sanitizeLink(link: string): string {
   const url = link.includes("http") ? link : `http://${link}`;
-  return url.replace(/\s+/g, "");
+  return removeWhiteSpace(url);
+}
+
+function removeWhiteSpace(value: string): string {
+  return value.replace(/\s+/g, "");
 }

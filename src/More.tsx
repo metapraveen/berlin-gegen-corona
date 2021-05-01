@@ -2,9 +2,9 @@ import { Link } from "wouter";
 
 export default function More() {
   return (
-    <div className="h-full h-screen">
+    <div className="h-full h-screen mx-auto max-w-xl text-gray-900">
       <div className="text-indigo-500  font-bold p-5 text-center">
-        Berlin gegen Corona
+        Berlin fights Corona
       </div>
       <p className="space-y-4 p-4">
         <p>
@@ -32,19 +32,25 @@ export default function More() {
         </p>
         <p>
           I have put together this in couple of hours, if any data is wrong or
-          you have suggestion for improvements let me know on my twitter.
+          you have suggestion for improvement feel free to write me know on my{" "}
           <a
             target="_blank"
             rel="noreferrer"
             className="text-blue-700 underline"
             href="https://twitter.com/metapraveen"
           >
-            metapraveen
+            twitter
           </a>{" "}
-          or on my telegram{" "}
-          <span className="text-purple-400">@metapraveen</span>
+          or{" "}
+          <a
+            target="_blank"
+            rel="noreferrer"
+            className="text-blue-700 underline"
+            href="https://t.me/metapraveen"
+          >
+            telegram
+          </a>{" "}
         </p>
-
         <p>
           <Link className={"underline text-blue-500"} to="/">
             Back to home
