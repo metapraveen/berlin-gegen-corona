@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+
+.floating-input > input::placeholder {
+  color: transparent;
+}
+
+.floating-input > input:focus,
+.floating-input > input:not(:placeholder-shown) {
+  @apply pt-8;
+}
+
+.floating-input > input:focus ~ label,
+.floating-input > input:not(:placeholder-shown) ~ label {
+  @apply opacity-75 scale-75 -translate-y-5 translate-x-0;
+}
+
+.react-select .react-select__control {
+  @apply border rounded-lg;
+}
+
+input:checked ~ .dot {
+  transform: translateX(100%);
+  @apply bg-green-600;
+}
+
+@tailwind utilities;
