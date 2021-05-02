@@ -4,11 +4,9 @@ import { Link } from "wouter";
 export default function Header() {
   return (
     <div className="p-4 text-center w-full max-w-xl">
-      <h1 className="text-indigo-600 font-bold">
-        Find a doctor to request covid vaccine in Berlin
-      </h1>
+      <h1 className="text-indigo-600 font-bold">Berlin Gegen Corona</h1>
       <p className="text-sm text-left mt-3 mb-1">
-        Berlin clinics information from{" "}
+        Berlin doctors information from{" "}
         <a
           target="_blank"
           rel="noreferrer"
@@ -19,7 +17,7 @@ export default function Header() {
         </a>{" "}
         for requesting AstraZeneca vaccine for covid{" "}
         <Link className="text-blue-700 underline" to="/about">
-          more info
+          more
         </Link>
       </p>
     </div>

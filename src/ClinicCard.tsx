@@ -3,10 +3,10 @@ import { Clinic, keyToHeaderMap } from "./data";
 
 const keysOrder: (keyof Clinic)[] = [
   "key_0",
-  "key_1",
   "key_2",
-  "key_7",
+  "key_1",
   "key_8",
+  "key_7",
   "key_3",
   "key_4",
   "key_12",
@@ -46,7 +46,7 @@ export default function ClinicCard({ clinic }: { clinic: Clinic }) {
 
 function DetailsRow({ field, value }: { field: keyof Clinic; value: string }) {
   return (
-    <span className="text-base font-serif leading-relaxed">
+    <span className="text-base leading-relaxed">
       {field === "key_9" || field === "key_12" ? (
         <a
           className="text-blue-400 underline"
@@ -60,7 +60,7 @@ function DetailsRow({ field, value }: { field: keyof Clinic; value: string }) {
         <span
           data-value={value}
           onClick={copyToClipboard}
-          className={field === "key_8" ? "font-semibold text-sm" : ""}
+          className={field === "key_8" ? "font-semibold" : ""}
         >
           {value}
         </span>
