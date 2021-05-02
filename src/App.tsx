@@ -4,7 +4,7 @@ import SearchBar from "./SearchBar";
 import clinicsData, { Clinic } from "./data";
 import ClinicCard from "./ClinicCard";
 import Header from "./Header";
-
+const uniqueClinicsData = getUniqueClinics(clinicsData);
 const searchableKeys = [
   "key_0",
   "key_1",
@@ -16,7 +16,7 @@ const searchableKeys = [
 ];
 
 function App() {
-  const [clinics, setClinics] = useState<Clinic[]>(clinicsData);
+  const [clinics, setClinics] = useState<Clinic[]>(uniqueClinicsData);
   const filterClinicsOnSearch = useCallback(
     (input: string) => setClinics(searchClinics(input)),
     []
@@ -36,10 +36,10 @@ function App() {
 
 const searchClinics = (input: string) => {
   if (input.trim().length === 0) {
-    return clinicsData;
+    return uniqueClinicsData;
   }
 
-  const filteredClinics = clinicsData.filter((clinic) =>
+  const filteredClinics = uniqueClinicsData.filter((clinic) =>
     Object.entries(clinic).some(
       ([key, value]) =>
         searchableKeys.includes(key) &&
@@ -48,5 +48,19 @@ const searchClinics = (input: string) => {
   );
   return filteredClinics;
 };
+
+function getUniqueClinics(clinics: Clinic[]): Clinic[] {
+  const addressToClinic = clinics.reduce((addressToClinic, clinic) => {
+    if (clinic.key_0.toLocaleLowerCase() === "bezirk") return addressToClinic;
+
+    const fullAddress: string = clinic.key_2 + "," + clinic.key_1;
+    if (addressToClinic[fullAddress]) return addressToClinic;
+
+    addressToClinic[fullAddress] = clinic;
+    return addressToClinic;
+  }, {} as { [key: string]: Clinic });
+
+  return Object.values(addressToClinic);
+}
 
 export default App;
