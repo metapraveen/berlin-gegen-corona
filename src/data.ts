@@ -17,6 +17,7 @@ export const keyToHeaderMap = {
 };
 
 export type Clinic = {
+  id?: string;
   key_0: string;
   key_1: string;
   key_2: string;

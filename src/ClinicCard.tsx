@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import copyToClipboard from "./copyToClipboard";
 import { Clinic, keyToHeaderMap } from "./data";
 
@@ -19,16 +20,23 @@ const keysOrder: (keyof Clinic)[] = [
   "key_14",
 ];
 
-export default function ClinicCard({ clinic }: { clinic: Clinic }) {
+export default function ClinicCard({
+  clinic,
+  show = false,
+}: {
+  clinic: Clinic;
+  show?: boolean;
+}) {
   return (
     <div className=" p-3 bg-white rounded-lg w-full subpixel-antialiased shadow-md">
       {keysOrder.map((key) => {
+        if (key === "key_1" || key === "id") return null;
+
         let value =
           key === "key_8" ? removeWhiteSpace(clinic[key]) : clinic[key];
         if (!value || value.trim().length === 0) return null;
 
         if (key === "key_2") value = `${value}, ${clinic.key_1}`;
-        if (key === "key_1") return null;
 
         return (
           <div>
@@ -36,7 +44,15 @@ export default function ClinicCard({ clinic }: { clinic: Clinic }) {
               {keyToHeaderMap[key]}:{" "}
             </span>
 
-            <DetailsRow field={key} value={value} />
+            {!show && (key === "key_3" || key === "key_4") ? (
+              <Link to={`/doctor/${clinic.id}`}>
+                <span className="text-blue-400 underline cursor-pointer">
+                  <DetailsRow field={key} value={value} />
+                </span>
+              </Link>
+            ) : (
+              <DetailsRow field={key} value={value} />
+            )}
           </div>
         );
       })}
