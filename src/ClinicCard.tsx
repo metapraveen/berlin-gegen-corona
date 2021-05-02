@@ -60,7 +60,6 @@ function DetailsRow({ field, value }: { field: keyof Clinic; value: string }) {
         <span
           data-value={value}
           onClick={copyToClipboard}
-          style={{ cursor: "copy" }}
           className={field === "key_8" ? "font-semibold text-sm" : ""}
         >
           {value}

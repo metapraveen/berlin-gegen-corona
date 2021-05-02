@@ -25,8 +25,8 @@ const SearchBar: React.FC<Props> = ({ onSearch }) => {
         onChange={(changeEvent) =>
           onSearch(changeEvent.currentTarget.value.trim().toLocaleLowerCase())
         }
-        placeholder="search using district, pin, address or doctor"
-        className="bg-white pl-8 shadow-sm w-full leading-tight border border-gray-400 focus:outline-none focus:border-indigo-200 h-12 bg-transparent rounded-xl"
+        placeholder="search using address, email or name of doctor/clinic"
+        className="focus:bg-white pl-8 shadow-sm w-full border border-gray-400 h-12 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent"
       />
     </div>
   );
