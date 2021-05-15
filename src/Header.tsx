@@ -15,9 +15,9 @@ export default function Header() {
         >
           kvberlin.de
         </a>{" "}
-        for requesting AstraZeneca vaccine for covid{" "}
+        for requesting vaccine for covid{" "}
         <Link className="text-blue-700 underline" to="/about">
-          more
+          more info
         </Link>
       </p>
     </div>
