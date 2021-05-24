@@ -6,7 +6,7 @@ import ClinicCard from "./ClinicCard";
 import Header from "./Header";
 
 export const uniqueClinicsData = getUniqueClinics(clinicsData);
-
+console.log("total doctors count ", uniqueClinicsData.length);
 const searchableKeys = [
   "key_0",
   "key_1",
@@ -29,7 +29,7 @@ function App() {
       <SearchBar onSearch={filterClinicsOnSearch} />
       <div className="mt-8 space-y-4 w-full h-full">
         {clinics.map((clinic) => {
-          return <ClinicCard clinic={clinic} />;
+          return <ClinicCard key={clinic.id} clinic={clinic} />;
         })}
       </div>
     </div>

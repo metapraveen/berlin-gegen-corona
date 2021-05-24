@@ -69,7 +69,7 @@ export default function ClinicCard({
         if (key === "key_2") value = `${value}, ${clinic.key_1}`;
 
         return (
-          <div>
+          <div key={key}>
             <span className="text-sm font-medium capitalize font-mono">
               {keyToHeaderMap[key]}:{" "}
             </span>
